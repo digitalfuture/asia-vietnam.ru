@@ -1,0 +1,49 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color='dark'>
+
+      <button  ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+
+      <img src="assets/images/logo.png">
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+    <br>
+      <ion-item
+        ion-item menuClose
+        *ngFor="let category of getCategories()"
+        [attr.value]="category.id"
+        (click)="changeCategory({ id: category.id, name: category.name })">
+
+          <ion-icon item-left name="{{getIcon(category.name)}}"></ion-icon>
+
+          <span *ngIf="category.name != 'Все новости'">
+            <!-- <ion-icon name="ios-arrow-forward"></ion-icon>&nbsp; &nbsp; -->
+          </span>
+
+          {{category.name}}
+
+			</ion-item>
+
+    </ion-list>
+
+    <br/>
+    <br/>
+    <!-- <ion-item-divider ></ion-item-divider> -->
+
+    <ion-item ion-item menuClose (click)="openPage('AboutPage')">
+      <ion-icon item-left name="information"></ion-icon>
+      Информация
+
+    </ion-item>
+
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav root="NewsPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar color='dark'>
+    
+    <button 
+      ion-button 
+      menuToggle
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <img src="assets/images/logo.png">
+
+    <ion-buttons end>
+      
+      <button 
+        ion-button 
+        icon-only 
+        (click)="share(post)"
+      >
+        
+        <ion-icon 
+          color='light' 
+          name='share'
+        ></ion-icon>
+      
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <section id="details">
+
+      <ion-card-title [innerHTML]='post.title.rendered'></ion-card-title>
+
+      <hr>
+
+      <img 
+        class='placeholder' 
+        src="assets/images/placeholder.png"
+      >
+      
+      <img 
+        hidden 
+        (load)='offPlaceholder($event)' 
+        [src]="post._embedded['wp:featuredmedia'][0].source_url"
+      >
+      
+      <!-- Icon template for quotes-->
+      <ion-icon name="quote" hidden></ion-icon>
+
+      <div [innerHTML]="post.content.rendered | parseHtml | safeHtml"></div>
+
+      <hr>
+
+      <p><i>{{ post.date | formatTime }}</i></p>
+
+      <div class="tag">
+        <button 
+          *ngFor="let tag of tags" 
+          ion-button 
+          color="secondary" 
+          small
+          round
+          
+          (tap)="openTagPage(tag)"
+        >
+          #{{tag['name']}}
+        </button>
+      </div>
+    </section>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

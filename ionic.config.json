@@ -1,0 +1,7 @@
+{
+  "name": "Vietnam News",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

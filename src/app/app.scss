@@ -1,0 +1,248 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+//
+
+.toolbar-content {
+    display: flex;
+
+    .toolbar-title {
+        font-family: 'Noto Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    img {
+        height: 30px;
+        margin-left: 8px;
+    }
+}
+
+ion-content .label {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+.active {
+    .item-inner {
+        background-color: rgba(0,0,0,0.05);
+    }
+
+    ion-icon[name="ios-arrow-forward"] {
+        visibility: hidden;
+    }
+}
+
+.toast {
+    opacity: .95;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+
+    .toast-message {
+        color: lightgrey;
+    }
+}
+
+.infinite-icon {
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.animation-show {
+    animation: show 750ms;
+    opacity: 1;
+}
+
+.animation-hide {
+    animation: hide 750ms;
+    opacity: 0;
+}
+
+.animation-pulse {
+    animation: pulse 1500ms infinite;
+}
+
+
+
+//
+news-page, category-page, tag-page {
+
+    .custom-spinner {
+        margin: 20px auto;
+        width: 28px;
+
+        ion-spinner * {
+            margin: auto;
+            margin-left: -14px;
+            left: 50%;
+            right: 0;
+
+            stroke: gray;
+        }
+    }
+
+    ion-input {
+        height: 30px;
+
+        .input-md[clearInput] .text-input {
+            height: 30px;
+        }
+
+        input.text-input.text-input-md[clearInput] {
+            padding-right: 5px;
+            height: 30px;
+            padding-left: 4px;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: white;
+        }
+    }
+
+    ion-item {
+        display: flex;
+        align-items: center;
+
+        ion-title {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.3em;
+            line-height: 1em;
+            margin-bottom: 10px;
+        }
+        i {
+            font-family: 'Noto Serif', serif;
+            font-style: italic;
+            vertical-align: bottom;
+            color: grey;
+        }
+    }
+
+    ion-buttons {
+        display: flex;
+        align-items: center;
+
+        .infinite-icon {
+            margin-top: 3px;
+            margin-right: 5px;
+        }
+
+        .search-icon {
+            margin-top: 3px;
+            margin-right: 10px;
+        }
+
+        .cancel-icon {
+            animation: show 750ms;
+            margin-top: 3px;
+            margin-right: 10px;
+        }
+    }
+
+    #scroll-button {
+        margin: 0 30px 30px 0;
+    }
+
+    ion-thumbnail img {
+        animation: show 750ms;
+
+        &.invisible {
+            opacity: 0;
+        }
+    }
+}
+
+
+
+//
+@-webkit-keyframes pulse {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }}
+
+@-moz-keyframes pulse {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }}
+
+@-o-keyframes pulse {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@keyframes pulse {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+//
+@-webkit-keyframes show {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@-moz-keyframes show {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@-o-keyframes show {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@keyframes show {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+//
+@-webkit-keyframes hide {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@-moz-keyframes hide {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@-o-keyframes hide {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@keyframes hide {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}

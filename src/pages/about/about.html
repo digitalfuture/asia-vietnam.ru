@@ -1,0 +1,71 @@
+<ion-header>
+	<ion-navbar color='dark'>
+
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+		<img src="assets/images/icon.png">
+
+		<ion-title>Информация</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<ion-card-content>
+			<section id="about">
+
+				<img src="assets/images/about.png">
+				<ion-card-title class="title-text" >Новости Вьетнама</ion-card-title>
+
+				<hr>
+				<h2 class="short-text">
+					Вьетнам сегодня. Все самое интересное и важное в одном месте. Бизнес. Туризм. Происшествия. Полезная информация.
+				</h2>
+
+				<hr>
+				<br>
+
+				<div class="social">
+					<a href="#" target="_blank" onclick="window.open('https://www.youtube.com/channel/UCwSAW9N8XFGEO-dkevVKShA', '_system', 'location=yes'); return false;">
+						<ion-icon color='dark' name='logo-youtube'></ion-icon>
+					</a>
+
+					<a href="#" target="_blank" onclick="window.open('https://twitter.com/Asiavnnews', '_system', 'location=yes'); return false;">
+						<ion-icon color='dark' name='logo-twitter'></ion-icon>
+					</a>
+
+					<a href="#" target="_blank" onclick="window.open('https://vk.com/asiavietnam', '_system', 'location=yes'); return false;">
+						<img src='assets/icons/vkontakte.svg'>
+					</a>
+
+					<a href="#" target="_blank" onclick="window.open('https://ok.ru/asiavietnam', '_system', 'location=yes'); return false;">
+						<img src='assets/icons/odnoklassniki.svg'>
+					</a>
+
+					<a href="#" target="_blank" onclick="window.open('https://www.facebook.com/asiavietnamnews', '_system', 'location=yes'); return false;">
+						<ion-icon color='dark' name='logo-facebook'></ion-icon>
+					</a>
+
+					<a href="#" target="_blank"  onclick="window.open('https://www.instagram.com/asiavietnam.ru/', '_system', 'location=yes'); return false;">
+						<ion-icon color='dark' name='logo-instagram'></ion-icon>
+					</a>
+				</div>
+
+				<br>
+				<hr>
+
+				<p>
+					<ion-icon name='mail'></ion-icon>
+					<i><a href="mailto:info@asia-vietnam.ru" target="_blank"> &nbsp;&nbsp;&nbsp;info@asia-vietnam.ru</a></i>
+					<br>
+					<ion-icon name='call'></ion-icon>
+					<i>&nbsp;&nbsp;&nbsp;+84 120 600 74 88</i>
+				</p>
+				<hr>
+				<i>&copy; 2015-{{ currentYear }} <a target="_blank" href="#" onclick="window.open('http://asia-vietnam.ru', '_system', 'location=yes'); return false;">asia-vietnam.ru</a></i>
+			</section>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

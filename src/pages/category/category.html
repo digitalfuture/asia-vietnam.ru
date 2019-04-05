@@ -1,0 +1,66 @@
+<ion-header>
+	<ion-navbar color='dark'>
+
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+
+		<img src="assets/images/icon.png">
+
+		<ion-title>
+			{{category.name}}
+		</ion-title>
+
+		<ion-buttons end>
+			<span *ngIf="infiniteIconVisible"
+				icon-only right>
+
+				<ion-icon
+					class="infinite-icon invisible"
+					name="infinite"
+					color="light">
+				</ion-icon>
+			</span>
+		</ion-buttons>
+
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-item *ngFor="let post of sortedPosts()" text-wrap (click)="viewPost(post)">
+
+			<ion-thumbnail item-left>
+
+				<img class='placeholder' src="assets/images/placeholder150.png">
+
+				<img class='invisible' hidden (load)='offPlaceholder($event)' [src]="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url">
+
+			</ion-thumbnail>
+
+			<ion-title [innerHTML]='post.title.rendered'></ion-title>
+
+			<i>{{post.date | formatTime}}</i>
+
+		</ion-item>
+	</ion-list>
+
+	<div *ngIf="spinnerVisible" class="custom-spinner">
+		<ion-spinner></ion-spinner>
+	</div>
+
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content></ion-refresher-content>
+	</ion-refresher>
+
+	<ion-infinite-scroll (ionInfinite)="loadMore($event)">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+
+	<ion-fab *ngIf="scrollButtonEnabled" id="scroll-button" right bottom>
+		<button color="light" (click)="scrollToTop()" ion-fab>
+			<ion-icon name="ios-arrow-up"></ion-icon>
+		</button>
+	</ion-fab>
+
+</ion-content>

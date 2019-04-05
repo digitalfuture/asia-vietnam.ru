@@ -1,0 +1,59 @@
+about-page {
+    ion-navbar ion-buttons {
+        margin-right: 20px;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    .title-text, .short-text {
+        text-align: center;
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            padding: 0 8px 0 8px;
+
+            ion-icon {
+                line-height: 40px;
+                font-size: 40px;
+            }
+            img {
+                height: 40px;
+                width: 30px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    ion-card.card {
+        ion-card-content {
+            #about {
+                ion-card-title {
+                    font-family: 'Noto Serif', serif;
+                    font-style: italic;
+                }
+                h2 {
+                    font-family: 'Roboto Condensed', sans-serif;
+                    font-size: 1.3em;
+                }
+                p {
+                    font-family: 'Noto Sans', sans-serif;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                i {
+                    font-family: 'Noto Serif', serif;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    .infinite {
+        margin-top: 3px;
+    }
+}
